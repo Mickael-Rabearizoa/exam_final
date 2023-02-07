@@ -1,0 +1,114 @@
+Mannuel de fonction
+###########
+
+module login:
+    _ getAllUsers():
+        description: maka utilisateur rehetra
+        return "user[]"
+        algorythme: vide
+
+    _ check_login($login , $mdp)
+        description: miverifier login
+        return "0" -> tsisy erreur , "1" -> "compte innexistante" , "2" -> "mdp incorrect"
+        algorythme:
+            verifier si $login et $mdp sont correct
+
+    _ check_loginAdmin($login , $mdp)
+        description: miverifier login admin
+        return "0" -> tsisy erreur , "1" -> "compte innexistante" , "2" -> "mdp incorrect"
+        algorythme:
+            verifier si $login et $mdp sont correct
+
+    _ inscription($nom , $prenom , $Email , $date_naissance , $mdp)
+        description: miverifier mot de passe
+        return "void"
+        algorythme: vide
+
+    _ getAdmin()
+        description: maka admin
+        return "admin"
+        algorythme: vide
+
+##################
+
+module gestion categorie:
+    _ getAllCategorie():
+        description: maka categorie rehetra
+        return "categorie"
+        algorythme: vide
+
+    _ ajoutCategorie($categorie):
+        description: manampy categorie
+        return "void"
+        algorythme: vide
+
+##################
+
+module gestion objet:
+    _ getObjet_filtre($idUser , $idCategorie)
+        description: maka objet an'ny utilisateur iray am categorie iray
+        return "Objet[]"
+        algorythme: vide
+
+    _ getObjet_By_IdUser($idUser)
+        description: maka objet an'ny utilisateur iray
+        return "Objet[]"
+        algorythme: vide
+
+    _ ajoutObjet($idCategorie , $idProprietaire , $nomObjet , $description , $prix_Estimatif , idImage)
+        description: manampy objet
+        return "void"
+        algorythme: vide
+
+    _ supprimer_objet($idObjet)
+        description: mamafa objet iray
+        return "void"
+        algorythme: vide
+
+    _ modifier_objet($objet)
+        description: modifier objet iray
+        return "void"
+        algorythme: vide
+
+    _ getObjet_By_IdObjet($idObjet)
+        description: maka objet iray
+        return "Objet"
+        algorythme: vide
+
+
+module proposition d'echange:
+    _ proposer_echange($idObjet_demande , $idObjet_en_echange)
+        description: mandefa proposition echange objet (insetion anaty table proposition)
+        return "void"
+        algorythme: vide
+
+    _ changer_proprietaire($idObjet , $idUser)
+        description: manova proprietaire objet roa
+        return "void"
+        algorythme: vide
+
+    _ getMyProposition($idUser)
+        description: maka proposition nataon'ny utilisateur iray
+        return "proposition[]"
+        algorythme: vide
+
+    _ getMyDemande($idUser)
+        description: maka proposition natao tam utilisateur iray
+        return "proposition[]"
+        algorythme: vide
+
+    _ accept_proposition($idProposition)
+        description: accepter proposition iray
+        return "void"
+        algorythme: vide
+
+    _ refuse_proposition($idProposition)
+        description: refuser proposition iray
+        return "void"
+        algorythme: vide
+
+    _ getProposition_ById($idProposition)
+        description: maka proposition iray
+        return "proposition"
+        algorythme: vide7
+    
