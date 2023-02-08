@@ -537,7 +537,7 @@ html {
 }
 
 .margin-right{
-  margin-right: 300px;
+  margin-right: 50px;
 }
 
 .size-large{
@@ -560,4 +560,52 @@ html {
   text-shadow: 1.5px 1.5px 1.5px black;
 }
 
+.padding-top-15{
+  padding-top: 15px;
+}
+
+.echange {
+  margin-top: 20px;
+  background-color: #f07d19;
+  width: 100%;
+  border-radius: 0px 20px 20px 0px;
+  box-shadow: 2px 2px 2px grey;
+}
+
+.right{
+  width: 200px;
+  margin-top: 15px;
+  /* background-color: #1563eb; */
+}
+
+.button{
+  text-align: center;
+  background-color: white;
+  width: 70px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 1.5px 1.5px 1.5px grey;
+}
+
+.button-objet{
+  background-color: #f07d19;
+  
+}
+
+.button-objet a{
+  color: white;
+}
+
+.etat{
+  text-align: center;
+  padding-top: 50px;
+}
+
+body{
+  height: 800px;
+}
+
+footer{
+  clear: both;
+}
 /*# sourceMappingURL=style.css.map */

@@ -28,3 +28,10 @@ INSERT INTO Objet VALUES(null,1,1,'BMW','4 portes,volant a droite , couleur noir
 -- --------------------------------------------------------------------------------------------------
 
 insert into image_objet values(1,1);
+insert into image_objet values(2,1);
+insert into image_objet values(2,2);
+insert into image_objet values(3,3);
+insert into image_objet values(3,4);
+insert into image_objet values(3,5);
+insert into image_objet values(3,6);
+insert into image_objet values(3,7);

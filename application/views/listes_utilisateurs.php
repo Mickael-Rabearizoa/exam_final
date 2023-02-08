@@ -37,31 +37,37 @@
 
            <div class="section-container p-2 p-xl-4">
         
-                <h4 class="fs-6 fw-bolder my-3 mt-2 mb-4">Tous les listes d'Objet</h4>
+                <h4 class="fs-6 fw-bolder my-3 mt-2 mb-4">Liste d'Utilisateurs</h4>
+                
                 <div class="row m-0">
-                <?php
-                    foreach($objet as $obj){
-                ?>
+                    <?php
+                        foreach($users as $user){
+                    ?>
                         <div class="col-md-4 mb-3">
-                        <div class="app-cover p-2 shadow-md bg-white">
-                            <div class="row">
-                                <div class="img-cover pe-0 col-3"> <img class="rounded" src=<?php echo site_url($obj["pathImage"]); ?> alt=""></div>
+                            <div class="app-cover p-2 shadow-md bg-white">
+                                <div class="row">
+                                    <div class="img-cover pe-0 col-3"> <div class="img-cover pe-0 col-3">
+                                <a
+                                    class="btn text-white btn-floating m-1"
+                                    style="background-color: #55acee;"
+                                    href="#!"
+                                    role="button"
+                                    ><i class="fas fa-user"></i>
+                                </a> 
+                                    
+                                 </div></div>
                                     <div class="det mt-2 col-9" style="float: right;">
-                                        <h4 class="mb-0 fs-6"><?php echo $obj["nomObjet"]; ?></h4>
+                                        <h4 class="mb-0 fs-6"><?php echo $user["nom"]." ".$user["prenom"]; ?></h4>
                                         <br>
-                                        <div class="mb-0 fs-6 btn button-objet"><a href=<?php echo site_url("loader/modif_objet/".$obj["idObjet"]); ?>>Modifier</a></div>
-                                        <div class="mb-0 fs-6 btn button-objet"><a href=<?php echo site_url("traitement/traitement_suppression/".$obj["idObjet"]); ?>>Supprimer</a></div>
-                                        <div class="mb-0 fs-6 btn button-objet"><a href=<?php echo site_url("loader/apercu/".$obj["idObjet"]); ?>>Aperçue</a></div>
+                                        <span class="mb-0 fs-6 btn button-objet"><a href=<?php echo site_url("loader/listes_objets_autres/".$user["idUser"]); ?>>liste d'objet</a></span>
                                     </div>
                                 </div>
                             </div>
-                        </div>              
-                <?php
-                    }
-
-                ?>
+                        </div>
+                    <?php
+                        }
+                    ?>              
                 </div>
-                    
             </div>
            </div>
         </div>

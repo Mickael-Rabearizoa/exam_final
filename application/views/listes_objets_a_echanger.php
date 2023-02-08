@@ -24,7 +24,7 @@
                 <?php
                     foreach($categories as $categorie){
                 ?>
-                        <li class="border-bottom"><a href=<?php echo site_url("loader/filtre/".$categorie["idCategorie"]."/objet_utilisateur"); ?>><?php echo $categorie["nomCategorie"]; ?></a></li>
+                        <li class="border-bottom"><a href=<?php echo site_url("loader/filtre_echange/".$categorie["idCategorie"]."/listes_objets_a_echanger/".$objet_a_echanger["idObjet"]); ?>><?php echo $categorie["nomCategorie"]; ?></a></li>
                 <?php
                     }
                 ?>
@@ -36,7 +36,19 @@
         ?>
 
            <div class="section-container p-2 p-xl-4">
-        
+                <h4 class="fs-6 fw-bolder my-3 mt-2 mb-4">Objet d'echange</h4>
+                <div class="col-md-4 mb-3">
+                    <div class="app-cover p-2 shadow-md bg-white">
+                        <div class="row">
+                            <div class="img-cover pe-0 col-3"> <img class="rounded" src=<?php echo site_url($objet_a_echanger["pathImage"]); ?> width="500px" height="100px" alt=""></div>
+                            <div class="det mt-2 col-9" style="float: right;">
+                                <h4 class="mb-0 fs-6"><?php echo $objet_a_echanger["nomObjet"]; ?></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>      
+
+
                 <h4 class="fs-6 fw-bolder my-3 mt-2 mb-4">Tous les listes d'Objet</h4>
                 <div class="row m-0">
                 <?php
@@ -45,13 +57,12 @@
                         <div class="col-md-4 mb-3">
                         <div class="app-cover p-2 shadow-md bg-white">
                             <div class="row">
-                                <div class="img-cover pe-0 col-3"> <img class="rounded" src=<?php echo site_url($obj["pathImage"]); ?> alt=""></div>
+                                <div class="img-cover pe-0 col-3"> <img class="rounded" src=<?php echo site_url($obj["pathImage"]); ?> width="500px" height="100px" alt=""></div>
                                     <div class="det mt-2 col-9" style="float: right;">
                                         <h4 class="mb-0 fs-6"><?php echo $obj["nomObjet"]; ?></h4>
                                         <br>
-                                        <div class="mb-0 fs-6 btn button-objet"><a href=<?php echo site_url("loader/modif_objet/".$obj["idObjet"]); ?>>Modifier</a></div>
-                                        <div class="mb-0 fs-6 btn button-objet"><a href=<?php echo site_url("traitement/traitement_suppression/".$obj["idObjet"]); ?>>Supprimer</a></div>
-                                        <div class="mb-0 fs-6 btn button-objet"><a href=<?php echo site_url("loader/apercu/".$obj["idObjet"]); ?>>Aperçue</a></div>
+                                        <span class="mb-0 fs-6 btn button-objet"><a href=<?php echo site_url("traitement/proposition_echange/".$obj["idObjet"]."/".$objet_a_echanger["idObjet"]); ?>>Echanger objets</a></span>
+                                        <span class="mb-0 fs-6 btn button-objet"><a href=<?php echo site_url("loader/apercu_echange/".$obj["idObjet"]."/".$objet_a_echanger["idObjet"]); ?>>Aperçue</a></span>
                                     </div>
                                 </div>
                             </div>

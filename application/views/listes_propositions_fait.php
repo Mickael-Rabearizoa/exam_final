@@ -32,40 +32,56 @@
         </div>
     </header>
         <?php
-        require_once('header_hafa.php');
+            require_once('header_hafa.php');
         ?>
 
            <div class="section-container p-2 p-xl-4">
         
-                <h4 class="fs-6 fw-bolder my-3 mt-2 mb-4">Tous les listes d'Objet</h4>
-                <div class="row m-0">
+                <h4 class="fs-6 fw-bolder my-3 mt-2 mb-4">Vos proposition d'echange</h4>
                 <?php
-                    foreach($objet as $obj){
+                    foreach($propositions as $proposition){
                 ?>
-                        <div class="col-md-4 mb-3">
-                        <div class="app-cover p-2 shadow-md bg-white">
-                            <div class="row">
-                                <div class="img-cover pe-0 col-3"> <img class="rounded" src=<?php echo site_url($obj["pathImage"]); ?> alt=""></div>
-                                    <div class="det mt-2 col-9" style="float: right;">
-                                        <h4 class="mb-0 fs-6"><?php echo $obj["nomObjet"]; ?></h4>
-                                        <br>
-                                        <div class="mb-0 fs-6 btn button-objet"><a href=<?php echo site_url("loader/modif_objet/".$obj["idObjet"]); ?>>Modifier</a></div>
-                                        <div class="mb-0 fs-6 btn button-objet"><a href=<?php echo site_url("traitement/traitement_suppression/".$obj["idObjet"]); ?>>Supprimer</a></div>
-                                        <div class="mb-0 fs-6 btn button-objet"><a href=<?php echo site_url("loader/apercu/".$obj["idObjet"]); ?>>Aperçue</a></div>
-                                    </div>
+                        <div class="echange">
+
+
+                            <div class="row m-0">
+                                <div class="col-md-4 mb-3 padding-top-15">
+                                    <div class="app-cover p-2 shadow-md bg-white">
+                                        <div class="row">
+                                            <div class="img-cover pe-0 col-3"> <img class="rounded" src=<?php echo site_url($proposition["pathImage1"]); ?> width="500px" height="100px" alt=""></div>
+                                                <div class="det mt-2 col-9" style="float: right;">
+                                                    <h4 class="mb-0 fs-6"><?php echo $proposition["objet1"]["nomObjet"]; ?></h4>
+                                                    <p>Proprietaire: Vous</p>
+                                                    <br>
+                                                </div>
+                                        </div>
+                                    </div>              
                                 </div>
+                                <div class="col-md-4 mb-3 padding-top-15">
+                                    <div class="app-cover p-2 shadow-md bg-white">
+                                        <div class="row">
+                                            <div class="img-cover pe-0 col-3"> <img class="rounded" src=<?php echo site_url($proposition["pathImage2"]); ?> width="500px" height="100px" alt=""></div>
+                                                <div class="det mt-2 col-9" style="float: right;">
+                                                    <h4 class="mb-0 fs-6"><?php echo $proposition["objet2"]["nomObjet"]; ?></h4>
+                                                    <p>Proprietaire: <?php echo $proposition["user2"]["nom"]." ".$proposition["user2"]["prenom"]; ?></p>
+                                                    <br>
+                                                </div>
+                                        </div>
+                                    </div>              
+                                </div>
+                                <div class="col-md-4 mb-3 etat"><h2>En attente...</h2></div>
                             </div>
-                        </div>              
+
+                        </div>
+
                 <?php
                     }
-
                 ?>
-                </div>
-                    
+                
+
+               
+
             </div>
-           </div>
-        </div>
-        
     <body>
 </body>
 

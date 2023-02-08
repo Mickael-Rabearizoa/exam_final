@@ -38,15 +38,15 @@ create table objet(
 -- A modifier
 create table proposition(
     idProposition int primary key auto_increment,
-    idObjet_demande int,
-    idObjet_en_echange int,
-    idProprietaire_demande int,
-    idProprietaire_objet_en_echange int,
+    idObjet1 int,
+    idObjet2 int,
+    idUser1 int,
+    idUser2 int,
     etat varchar(10),
-    FOREIGN KEY(idObjet_demande) REFERENCES objet(idObjet),
-    FOREIGN KEY(idObjet_en_echange) REFERENCES objet(idObjet),
-    FOREIGN KEY(idProprietaire_demande) REFERENCES user(idUser),
-    FOREIGN KEY(idProprietaire_objet_en_echange) REFERENCES user(idUser)
+    FOREIGN KEY(idObjet1) REFERENCES objet(idObjet),
+    FOREIGN KEY(idObjet2) REFERENCES objet(idObjet),
+    FOREIGN KEY(idUser1) REFERENCES user(idUser),
+    FOREIGN KEY(idUser2) REFERENCES user(idUser)
 );
 
 
@@ -62,7 +62,14 @@ create table image_objet(
     FOREIGN KEY(idImage) REFERENCES image(idImage)
 );
 
-
+create table echange(
+    idEchange int,
+    date_heure datetime,
+    idObjet int,
+    idUser int,
+    FOREIGN KEY(idObjet) REFERENCES objet(idObjet),
+    FOREIGN KEY(idUser) REFERENCES user(idUser)
+);
 -- creation vue proposition sy ny olona nanao proposition
 
 create or replace view proposition_objet_en_echange as (

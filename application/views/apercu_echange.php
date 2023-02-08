@@ -9,11 +9,6 @@
         <link rel="stylesheet" href=<?php echo site_url("assets/css/bootstrap.min.css"); ?>>
         <link rel="stylesheet" type="text/css" href=<?php echo site_url("assets/css/gestion_categorie.css"); ?> />
         <link rel="stylesheet" href=<?php echo site_url("assets/fontawesome-5/css/all.css"); ?>>
-        <style>
-            .corps img{
-                width: 50%;
-            }
-        </style>
     </head>
     <header class="head">
         <div class="logo border-bottom">
@@ -29,7 +24,7 @@
                 <?php
                     foreach($categories as $categorie){
                 ?>
-                        <li class="border-bottom"><a href=<?php echo site_url("loader/filtre/".$categorie["idCategorie"]."/objet_utilisateur"); ?>><?php echo $categorie["nomCategorie"]; ?></a></li>
+                        <li class="border-bottom"><a href=<?php echo site_url("loader/filtre_echange/".$categorie["idCategorie"]."/listes_objets_a_echanger/".$objet_a_echanger["idObjet"]); ?>><?php echo $categorie["nomCategorie"]; ?></a></li>
                 <?php
                     }
                 ?>
@@ -41,69 +36,51 @@
         ?>
 
            <div class="corps" >
-        
-                        <div class="row">
-                        <?php
-                            foreach($objet["images"] as $image){
-                        ?>
-                                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                                <div
-                                class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                                data-ripple-color="light" style="width: 50%;"
-                                >
-                                <img
-                                    src=<?php echo site_url($image["path"]); ?>
-                                    class="w-100" width="500px" height="350px"
-                                />
-                                </div>
-                        </div>
-                        <?php
-                            }
-                        ?>
-                      
-
-                        <!-- <div class="col-lg-4 mb-4 mb-lg-0">
-                            <div
-                            class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                            data-ripple-color="light" style="width: 50%;"
-                            >
+            <div class="row">
+                <?php
+                    foreach($objet["images"] as $image){
+                ?>
+                        <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                            <div class="bg-image hover-overlay ripple shadow-1-strong rounded" data-ripple-color="light" style="width: 50%;">
                             <img
-                                src="assets/images/books/2.png"
-                                class="w-100"
+                                src=<?php echo site_url($image["path"]); ?>
+                                class="w-100" width="500px" height="350px"
                             />
                             
                             </div>
                         </div>
 
-                        <div class="col-lg-4 mb-4 mb-lg-0">
-                            <div
-                            class="bg-image hover-overlay ripple shadow-1-strong rounded"
-                            data-ripple-color="light" style="width: 50%;"
-                            >
-                            <img
-                                src="assets/images/books/1.jpg"
-                                class="w-100"
-                            />
-                            
-                            </div>
-                        </div> -->
-                        </div>
-  
-  
-                <!-- <div>
-                    <img src="assets/images/books/1.jpg" class="rounded float-start" alt="tsisy">
-                    <img src="assets/images/books/2.png" class="rounded float-end" alt="...">
-                </div> -->
-<br>
-<hr>
-                <div class="text" >
+                <?php
+                    }
+                ?>
+                    </div>
+                    <hr>
+                    <div class="text" >
                     <h2>Details de l'objet :</h2>
                     <hr>
+                    <div style="padding: 1%;">
                             <div class="mb-3 row">
+                                <b><label for="nom_categ" class="col-sm-2 col-form-label">Nom de l'objet : <p><?php echo $objet["nomObjet"]; ?></p></label></b>
+                                <br>
                                 <b><label for="nom_categ" class="col-sm-2 col-form-label">Description : <p><?php echo $objet["description"]; ?></p></label></b>
                                 <br>
                                 <b><label for="nom_categ" class="col-sm-2 col-form-label">Prix estimatif : <p><?php echo $objet["prix_Estimatif"]; ?></p></label></b>
                             </div>
+                            <h4 class="fs-6 fw-bolder my-3 mt-2 mb-4">Objet d'echange</h4>
+                
+                            <div class="col-md-4 mb-3">
+                                <div class="app-cover p-2 shadow-md bg-white">
+                                    <div class="row">
+                                        <div class="img-cover pe-0 col-3"> <img class="rounded" src=<?php echo site_url($objet_a_echanger["pathImage"]); ?> width="500px" height="100px" alt=""></div>
+                                        <div class="det mt-2 col-9" style="float: right;">
+                                            <h4 class="mb-0 fs-6"><?php echo $objet_a_echanger["nomObjet"]; ?></h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>      
+
+                            <button class="btn-success"><a style="color: WHITE;" href=<?php echo site_url("traitement/proposition_echange/".$objet["idObjet"]."/".$objet_a_echanger["idObjet"]); ?>>Echanger contre cet objet</a></button>
+                    </div>
                 </div>
            </div>
         

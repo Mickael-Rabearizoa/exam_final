@@ -1,16 +1,14 @@
 <!doctype html>
     <html lang="en">
     <head>
-        <meta charset="utf-8">
+    <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>getion categorie</title>
-        <link rel="shortcut icon" href=<?php echo site_url("assets/images/fav.png"); ?>  type="image/x-icon">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet">
+        <title>liste Objets utilisateurs</title>
+        <link rel="shortcut icon" href=<?php echo site_url("assets/images/fav.png"); ?> type="image/x-icon">
         <link rel="shortcut icon" href=<?php echo site_url("assets/images/fav.jpg"); ?>>
-        <link rel="stylesheet" href=<?php echo site_url("assets/bootstrap/bootstrap.min.css"); ?> >
-        <link rel="stylesheet" href=<?php echo site_url("assets/bootstrap/all.min.css"); ?>>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+        <link rel="stylesheet" href=<?php echo site_url("assets/css/bootstrap.min.css"); ?>>
         <link rel="stylesheet" type="text/css" href=<?php echo site_url("assets/css/gestion_categorie.css"); ?> />
+        <link rel="stylesheet" href=<?php echo site_url("assets/fontawesome-5/css/all.css"); ?>>
         <style>
             .formulaire input{
                 width: 45%;
@@ -32,7 +30,7 @@
         ?>
            <div class="section-container p-2 p-xl-4">
         
-                <h4 class="fs-6 fw-bolder my-3 mt-2 mb-4">Tous les listes de categorie  <a class="float-end text-primary text-decoration-underline" href=""><small class="fs-8">View All</small></a></h4>
+                <h4 class="fs-6 fw-bolder my-3 mt-2 mb-4">Tous les listes de categorie</h4>
     
                 <div class="row m-0">
                     <?php
@@ -42,7 +40,7 @@
                         <div class="app-cover p-2 shadow-md bg-white">
                             <a href="#">
                                 <div class="row">
-                                    <div class="img-cover pe-0 col-3"> <img class="rounded" src=<?php echo site_url($categorie["pathImage"]); ?>  alt=""></div>
+                                    <div class="img-cover pe-0 col-3"> <img class="rounded" src=<?php echo site_url($categorie["pathImage"]); ?> width="500px" height="100px" alt=""></div>
                                         <div class="det mt-2 col-9">
                                             <h5 class="mb-0 fs-6"><?php echo $categorie["nomCategorie"]; ?></h5>
                                             
